@@ -56,12 +56,16 @@
   margin: 15px 0;
 }
 
-.form__input:focus + label, .form__input:valid + label {
+.form__input:focus + label,
+.form__input:valid + label,
+.form__input-radio:checked ~ .form__label-input  {
   top: -11px;
   left: 20px;
 
   font-size: 14px;
 }
+
+.form__label-input:disabled:checked {}
 
 .form__input-radio:checked + label {
   background: #5ef023;
