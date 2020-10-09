@@ -65,8 +65,6 @@
   font-size: 14px;
 }
 
-.form__label-input:disabled:checked {}
-
 .form__input-radio:checked + label {
   background: #5ef023;
 }
