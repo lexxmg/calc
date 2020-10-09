@@ -2,12 +2,28 @@
 
 }
 
-.form__inner {
+.form__group {
+  display: flex;
+  justify-content: space-around;
+}
 
+.form__inner {
+  position: relative;
+
+  margin: 10px 0 0 0;
 }
 
 .form__label-radio {
+  position: absolute;
+  top: calc(50% - 15px/2);
+  left: 5px;
 
+  display: block;
+  width: 15px;
+  height: 15px;
+
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .form__input-radio {
@@ -15,13 +31,38 @@
 }
 
 .form__label-input {
+  position: absolute;
+  top: 7px;
+  left: 35px;
 
+  background: #fff;
 }
 
 .form__input {
+  display: block;
 
+  width: 160px;
+  height: 35px;
+
+  padding-left: 25px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+
+  outline: none;
 }
 
 .form__btn {
-  
+  margin: 15px 0;
+}
+
+.form__input:focus + label, .form__input:valid + label {
+  top: -11px;
+  left: 20px;
+
+  font-size: 14px;
+}
+
+.form__input-radio:checked + label {
+  background: #5ef023;
 }

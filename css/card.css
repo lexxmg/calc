@@ -1,9 +1,13 @@
 .card-fiz {
+  padding: 5px;
 
+  background: #fff;
+
+  border-radius: 5px;
 }
 
 .card-fiz__title {
-
+  text-align: center;
 }
 
 .card-fiz__form {

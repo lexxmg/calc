@@ -35,13 +35,40 @@
           <h2 class="card-fiz__title">Физ-раствор</h2>
 
           <form action="" class="card-fiz__form form">
-            <div class="form__inner">
-              <label class="form__label-radio" for="per-rario"><abbr title="найти процент">.</abbr>
-                <input class="form__input-radio" id="per-rario" type="radio">
-              </label>
+            <div class="form__group">
+              <div class="form__inner">
+                <input class="form__input-radio visually-hidden"
+                       id="per-radio"
+                       type="radio"
+                       name="radio-fiz">
+                <label class="form__label-radio" for="per-radio" aria-label="проценты"></label>
 
-              <label class="form__label-input" for="per-input">Проценты</label>
-              <input class="form__input" type="text" id="per-input">
+                <input class="form__input" type="text" id="per-input" required>
+                <label class="form__label-input" for="per-input">Проценты</label>
+              </div>
+
+              <div class="form__inner">
+                <input class="form__input-radio visually-hidden"
+                       id="water-radio"
+                       type="radio"
+                       name="radio-fiz">
+                <label class="form__label-radio" for="water-radio" aria-label="вода"></label>
+
+                <input class="form__input" type="text" id="water-input" required>
+                <label class="form__label-input" for="water-input">Вода</label>
+              </div>
+
+              <div class="form__inner">
+                <input class="form__input-radio visually-hidden"
+                       id="salt-radio"
+                       type="radio"
+                       name="radio-fiz"
+                       checked>
+                <label class="form__label-radio" for="salt-radio" aria-label="соль"></label>
+
+                <input class="form__input" type="text" id="salt-input" required>
+                <label class="form__label-input" for="salt-input">Соль</label>
+              </div>
             </div>
 
             <button class="form__btn btn">Расчитать</button>
