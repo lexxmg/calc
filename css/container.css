@@ -1,0 +1,11 @@
+.container {
+  height: 100vh;
+
+  background: #f9f9f9;
+}
+
+.container__title {
+  font-size: 25px;
+
+  text-align: center;
+}

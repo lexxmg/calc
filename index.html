@@ -18,13 +18,36 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/container.css">
 
     <script src="js/script.js" defer></script>
   </head>
 
   <body>
     <div class="fixed-container">
+      <div class="container">
+        <h1 class="container__title">Расчёты</h1>
 
+        <div class="card-fiz">
+          <h2 class="card-fiz__title">Физ-раствор</h2>
+
+          <form action="" class="card-fiz__form form">
+            <div class="form__inner">
+              <label class="form__label-radio" for="per-rario"><abbr title="найти процент">.</abbr>
+                <input class="form__input-radio" id="per-rario" type="radio">
+              </label>
+
+              <label class="form__label-input" for="per-input">Проценты</label>
+              <input class="form__input" type="text" id="per-input">
+            </div>
+
+            <button class="form__btn btn">Расчитать</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
