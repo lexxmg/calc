@@ -7,9 +7,12 @@ formFiz.addEventListener('click', function(event) {
   for (let i = 0; i < radio.length; i++) {
     if (radio[i].checked) {
       radio[i].nextElementSibling.nextElementSibling.disabled = true;
-      radio[i].nextElementSibling.nextElementSibling.value = '';
+      if (!radio[i].nextElementSibling.nextElementSibling.dataset.on) {
+        radio[i].nextElementSibling.nextElementSibling.value = '';
+      }
     } else {
       radio[i].nextElementSibling.nextElementSibling.disabled = false;
+      radio[i].nextElementSibling.nextElementSibling.removeAttribute('data-on');
     }
   }
 });
@@ -19,15 +22,18 @@ formFiz.addEventListener('submit', function() {
   if (this.querySelector('#salt-radio').checked) {
     const result = (this.inputWater.value / 100) * this.inputPer.value;
     this.inputSalt.value = result;
+    this.inputSalt.dataset.on = 'on';
   }
 
   if (this.querySelector('#per-radio').checked) {
     const result = (100 / this.inputWater.value) * this.inputSalt.value;
     this.inputPer.value = result;
+    this.inputPer.dataset.on = 'on';
   }
 
   if (this.querySelector('#water-radio').checked) {
     const result = this.inputSalt.value * 100 / this.inputPer.value;
     this.inputWater.value = result;
+    this.inputWater.dataset.on = 'on';
   }
 });
