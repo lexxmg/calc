@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>calc</title>
+    <title>Растворы<</title>
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -29,12 +29,12 @@
   <body>
     <div class="fixed-container">
       <div class="container">
-        <h1 class="container__title">Расчёты</h1>
+        <h1 class="container__title">Растворы</h1>
 
-        <div class="card-fiz">
-          <h2 class="card-fiz__title">Физ-раствор</h2>
+        <div class="card">
+          <h2 class="card__title">Физ-раствор</h2>
 
-          <form action="" class="card-fiz__form form">
+          <form action="" class="card__form form form-fiz-js">
             <div class="form__group">
               <div class="form__inner">
                 <input class="form__input-radio visually-hidden"
@@ -68,6 +68,62 @@
 
                 <input class="form__input" type="text" id="salt-input" name="inputSalt"required disabled>
                 <label class="form__label-input" for="salt-input">Соль г.</label>
+              </div>
+            </div>
+
+            <button class="form__btn btn">Расчитать</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2 class="card__title ">Спиртовой раствор</h2>
+
+          <form action="" class="card__form form form-alc-js">
+            <div class="form__group">
+              <div class="form__inner">
+                <input class="form__input-radio visually-hidden"
+                       id="perAlc-radio"
+                       type="radio"
+                       name="radioAlc">
+                <label class="form__label-radio" for="perAlc-radio" aria-label="проценты"></label>
+
+                <input class="form__input" type="text" id="perAlc-input" name="inputPerAlc" value="70" required>
+                <label class="form__label-input" for="per-input">Проценты %</label>
+              </div>
+
+              <div class="form__inner">
+                <input class="form__input-radio visually-hidden"
+                       id="waterAlc-radio"
+                       type="radio"
+                       name="radioAlc">
+                <label class="form__label-radio" for="waterAlc-radio" aria-label="вода"></label>
+
+                <input class="form__input" type="text" id="waterAlc-input"  name="inputWaterAlc"required>
+                <label class="form__label-input" for="waterAlc-input">Вода мл.</label>
+              </div>
+
+              <div class="form__inner">
+                <input class="form__input-radio visually-hidden"
+                       id="Alc-radio"
+                       type="radio"
+                       name="radioAlc"
+                       checked>
+                <label class="form__label-radio" for="Alc-radio" aria-label="спирт"></label>
+
+                <input class="form__input" type="text" id="Alc-input" name="inputAlc" required disabled>
+                <label class="form__label-input" for="Alc-input">Спирт г.</label>
+              </div>
+
+              <div class="form__inner">
+                <input class="form__input-radio visually-hidden"
+                       id="volAlc-radio"
+                       type="radio"
+                       name="radioAlc">
+
+                <label class="form__label-radio" for="volAlc-radio" aria-label="объём"></label>
+
+                <input class="form__input" type="text" id="volAlc-input" name="inputVol" value="0" required>
+                <label class="form__label-input" for="volAlc-input">Обём мл.</label>
               </div>
             </div>
 
