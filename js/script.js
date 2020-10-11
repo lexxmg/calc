@@ -1,82 +1,45 @@
 'ues strict';
 
-const formFiz = document.querySelector('.form-fiz-js'),
-      formAlc = document.querySelector('.form-alc-js');
+const container = document.querySelector('.container');
 
-formFiz.addEventListener('click', function(event) {
-  const radio = this.querySelectorAll('input[type="radio"]');
-  for (let i = 0; i < radio.length; i++) {
-    if (radio[i].checked) {
-      radio[i].nextElementSibling.nextElementSibling.disabled = true;
-      if (!radio[i].nextElementSibling.nextElementSibling.dataset.on) {
-        radio[i].nextElementSibling.nextElementSibling.value = '';
-      }
-    } else {
-      radio[i].nextElementSibling.nextElementSibling.disabled = false;
-      radio[i].nextElementSibling.nextElementSibling.removeAttribute('data-on');
-    }
-  }
-});
-
-formAlc.addEventListener('click', function(event) {
-  const radio = this.querySelectorAll('input[type="radio"]');
-  for (let i = 0; i < radio.length; i++) {
-    if (radio[i].checked) {
-      radio[i].nextElementSibling.nextElementSibling.disabled = true;
-      if (!radio[i].nextElementSibling.nextElementSibling.dataset.on) {
-        radio[i].nextElementSibling.nextElementSibling.value = '';
-      }
-    } else {
-      radio[i].nextElementSibling.nextElementSibling.disabled = false;
-      radio[i].nextElementSibling.nextElementSibling.removeAttribute('data-on');
-    }
-  }
-});
-
-formFiz.addEventListener('submit', function() {
+container.addEventListener('input', event => {
   event.preventDefault();
-  if (this.querySelector('#salt-radio').checked) {
-    const result = (this.inputWater.value / 100) * this.inputPer.value;
-    this.inputSalt.value = result;
-    this.inputSalt.dataset.on = 'on';
-  }
+  const target = event.target;
+  const form = target.closest('form');
+  const a = form.in[0],
+        b = form.in[1],
+        c = form.in[2];
 
-  if (this.querySelector('#per-radio').checked) {
-    const result = (100 / this.inputWater.value) * this.inputSalt.value;
-    this.inputPer.value = result;
-    this.inputPer.dataset.on = 'on';
-  }
+  if (form.radio[2].checked) {
+      const result = (b.value / 100) * a.value;
+      c.value = isNumber(result);
+      form.in[2].disabled = true;
+      form.in[0].disabled = false;
+      form.in[1].disabled = false;
+    }
 
-  if (this.querySelector('#water-radio').checked) {
-    const result = this.inputSalt.value * 100 / this.inputPer.value;
-    this.inputWater.value = result;
-    this.inputWater.dataset.on = 'on';
-  }
+    if (form.radio[0].checked) {
+      const result = (100 / b.value) * c.value;
+      a.value = isNumber(result);
+      form.in[0].disabled = true;
+      form.in[1].disabled = false;
+      form.in[2].disabled = false;
+    }
+
+    if (form.radio[1].checked) {
+      const result = c.value * 100 / a.value;
+      b.value = isNumber(result);
+      form.in[1].disabled = true;
+      form.in[0].disabled = false;
+      form.in[2].disabled = false;
+    }
 });
 
-formAlc.addEventListener('submit', function() {
-  event.preventDefault();
-  if (this.querySelector('#Alc-radio').checked) {
-    const result = (this.inputWaterAlc.value / 100) * this.inputPerAlc.value;
-    this.inputAlc.value = result;
-    this.inputAlc.dataset.on = 'on';
-  }
 
-  if (this.querySelector('#perAlc-radio').checked) {
-    const result = (100 / this.inputWaterAlc.value) * this.inputAlc.value;
-    this.inputPerAlc.value = result;
-    this.inputPerAlc.dataset.on = 'on';
+function isNumber(n) {
+  if ( !isNaN( parseFloat(n) ) && isFinite(n) ) {
+    return n;
+  } else {
+    return 0;
   }
-
-  if (this.querySelector('#waterAlc-radio').checked) {
-    const result = this.inputAlc.value * 100 / this.inputPerAlc.value;
-    this.inputWaterAlc.value = result;
-    this.inputWaterAlc.dataset.on = 'on';
-  }
-
-  if (this.querySelector('#volAlc-input').checked) {
-    const result = this.inputAlc.value * 100 / this.inputPerAlc.value;
-    // this.inputVol.value = result;
-    // this.inputVol.dataset.on = 'on';
-  }
-});
+}

@@ -40,10 +40,10 @@
                 <input class="form__input-radio visually-hidden"
                        id="per-radio"
                        type="radio"
-                       name="radioFiz">
+                       name="radio">
                 <label class="form__label-radio" for="per-radio" aria-label="проценты"></label>
 
-                <input class="form__input" type="text" id="per-input" name="inputPer" value="0.9" required>
+                <input class="form__input" type="text" id="per-input" name="in" value="0.9" required>
                 <label class="form__label-input" for="per-input">Проценты %</label>
               </div>
 
@@ -51,10 +51,10 @@
                 <input class="form__input-radio visually-hidden"
                        id="water-radio"
                        type="radio"
-                       name="radioFiz">
+                       name="radio">
                 <label class="form__label-radio" for="water-radio" aria-label="вода"></label>
 
-                <input class="form__input" type="text" id="water-input"  name="inputWater"required>
+                <input class="form__input" type="text" id="water-input"  name="in" required>
                 <label class="form__label-input" for="water-input">Вода мл.</label>
               </div>
 
@@ -62,72 +62,14 @@
                 <input class="form__input-radio visually-hidden"
                        id="salt-radio"
                        type="radio"
-                       name="radioFiz"
+                       name="radio"
                        checked>
                 <label class="form__label-radio" for="salt-radio" aria-label="соль"></label>
 
-                <input class="form__input" type="text" id="salt-input" name="inputSalt"required disabled>
+                <input class="form__input" type="text" id="salt-input" name="in"required disabled>
                 <label class="form__label-input" for="salt-input">Соль г.</label>
               </div>
             </div>
-
-            <button class="form__btn btn">Расчитать</button>
-          </form>
-        </div>
-
-        <div class="card">
-          <h2 class="card__title ">Спиртовой раствор</h2>
-
-          <form action="" class="card__form form form-alc-js">
-            <div class="form__group">
-              <div class="form__inner">
-                <input class="form__input-radio visually-hidden"
-                       id="perAlc-radio"
-                       type="radio"
-                       name="radioAlc">
-                <label class="form__label-radio" for="perAlc-radio" aria-label="проценты"></label>
-
-                <input class="form__input" type="text" id="perAlc-input" name="inputPerAlc" value="70" required>
-                <label class="form__label-input" for="per-input">Проценты %</label>
-              </div>
-
-              <div class="form__inner">
-                <input class="form__input-radio visually-hidden"
-                       id="waterAlc-radio"
-                       type="radio"
-                       name="radioAlc">
-                <label class="form__label-radio" for="waterAlc-radio" aria-label="вода"></label>
-
-                <input class="form__input" type="text" id="waterAlc-input"  name="inputWaterAlc"required>
-                <label class="form__label-input" for="waterAlc-input">Вода мл.</label>
-              </div>
-
-              <div class="form__inner">
-                <input class="form__input-radio visually-hidden"
-                       id="Alc-radio"
-                       type="radio"
-                       name="radioAlc"
-                       checked>
-                <label class="form__label-radio" for="Alc-radio" aria-label="спирт"></label>
-
-                <input class="form__input" type="text" id="Alc-input" name="inputAlc" required disabled>
-                <label class="form__label-input" for="Alc-input">Спирт г.</label>
-              </div>
-
-              <div class="form__inner">
-                <input class="form__input-radio visually-hidden"
-                       id="volAlc-radio"
-                       type="radio"
-                       name="radioAlc">
-
-                <label class="form__label-radio" for="volAlc-radio" aria-label="объём"></label>
-
-                <input class="form__input" type="text" id="volAlc-input" name="inputVol" value="0" required>
-                <label class="form__label-input" for="volAlc-input">Обём мл.</label>
-              </div>
-            </div>
-
-            <button class="form__btn btn">Расчитать</button>
           </form>
         </div>
       </div>
